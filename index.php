@@ -5,39 +5,13 @@ $namespaces = $xml->getNameSpaces(true);
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
-    <style>
-        h2{
-            color: black;
-            font-size: larger;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        p{
-            color: black:
-            font-size: medium;
-            font-family: 'IBM Plex Serif', serif;
-            position: center;
-
-        }
-        #news{
-            margin: auto;
-            width: 50%;
-            border-bottom: 1px solid;
-            background-color: lightgrey;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 </head>
 <body>
-<form action="" method="get" id="news">
-
-    <p>Suchfeld:
-        <input type="text" name="suche">
-    </p>
-
-    <p>
+    <form action="" method="get">
+        <input type="text" name="suche" placeholder="Search..">
         <input type="submit" value="Suchen">
-    </p>
-
-</form>
+    </form>
 <?php
 $search = $_GET['suche'];
 foreach ($xml->channel->item as $item){
