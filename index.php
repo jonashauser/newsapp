@@ -15,8 +15,9 @@ $namespaces = $xml->getNameSpaces(true);
 <?php
 $search = $_GET['suche'];
 foreach ($xml->channel->item as $item){
+
     print '<div id="news">';
-    if (strpos(strtolower($item->title->__toString()),strtolower($search)) !== false){
+    if ((strpos(strtolower($item->title->__toString()),strtolower($search)) !== false) || !isset($search) ) {
         print '<h2>'.$item->title.'</h2>';
         print '<p>'.$item->description;'</p>';
     }
